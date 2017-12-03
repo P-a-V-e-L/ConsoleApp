@@ -26,5 +26,14 @@ namespace ConsoleApp
         {
             return _products;
         }
+        /// <summary>
+        /// Удалить продукт из корзины по индексу
+        /// </summary>
+        /// <param name="index"></param>
+        public void RemoveProductByIndex(int index)
+        {
+            if (index >= 0 && index < _products.Count)
+                _products.RemoveAt(index);
+        }
     }
 }
