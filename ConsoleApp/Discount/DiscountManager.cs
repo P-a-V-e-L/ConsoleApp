@@ -2,16 +2,16 @@
 
 namespace ConsoleApp
 {
-    public class DiscountManager
+    public class DiscountManager : IDiscountManager
     {
-        private readonly List<DiscountProduct> _discounts = new List<DiscountProduct>();
+        private readonly List<IDiscountProduct> _discounts = new List<IDiscountProduct>();
 
-        public void Add(DiscountProduct discount)
+        public void Add(IDiscountProduct discount)
         {
             _discounts.Add(discount);
         }
 
-        public List<DiscountProduct> GetDiscounts()
+        public List<IDiscountProduct> GetDiscounts()
         {
             return _discounts;
         }

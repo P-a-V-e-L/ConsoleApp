@@ -7,11 +7,11 @@ namespace ConsoleApp
         private const int COUNT = 5;
         private readonly List<ProductType> _deny = new List<ProductType>() {ProductType.ProductA, ProductType.ProductC};
 
-        public decimal GetSum(DiscountProduct discount, List<Product> products)
+        public decimal GetSum(IDiscountProduct discount, List<IProduct> products)
         {
             var denyProductTypes = discount.GetDenyProductTypes();
             decimal sum = 0;
-            List<Product> discountProducts = new List<Product>();
+            List<IProduct> discountProducts = new List<IProduct>();
 
             foreach (var product in products)
             {

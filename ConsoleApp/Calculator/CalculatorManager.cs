@@ -6,18 +6,18 @@ namespace ConsoleApp
     /// <summary>
     /// Для расчета общей цены товаров
     /// </summary>
-    public class CalculatorManager
+    public class CalculatorManager : ICalculatorManager
     {
-        private DiscountManager _discountManager;
-        private Cart _cart;
+        private IDiscountManager _discountManager;
+        private ICart _cart;
         private decimal _sum;
 
-        public void SetDiscountManager(DiscountManager discountManager)
+        public void SetDiscountManager(IDiscountManager discountManager)
         {
             _discountManager = discountManager;
         }
 
-        public void SetCart(Cart cart)
+        public void SetCart(ICart cart)
         {
             _cart = cart;
         }
@@ -51,6 +51,10 @@ namespace ConsoleApp
                         case DiscountProductType.ProductSet5:
                             var calculatorProduct5Context = new CalculatorProductContext(new CalculatorProduct5());
                             _sum += calculatorProduct5Context.GetSum(discount, products);
+                            break;
+                        case DiscountProductType.Birthday:
+                            var calculatorProductBirthdayContext = new CalculatorProductContext(new CalculatorProductBirthday());
+                            _sum += calculatorProductBirthdayContext.GetSum(discount, products);
                             break;
                     }
                 }

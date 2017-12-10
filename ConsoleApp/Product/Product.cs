@@ -2,7 +2,7 @@
 
 namespace ConsoleApp
 {
-    public abstract class Product
+    public class Product : IProduct
     {
         private static int _currentId = -1;
         protected decimal _price;

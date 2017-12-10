@@ -54,6 +54,11 @@ namespace ConsoleApp
             discount9.SetDiscountProductType(DiscountProductType.ProductSet5);
             discount9.SetDiscount(5);
 
+            var discount10 = new DiscountProduct();
+            discount10.SetDiscountProductType(DiscountProductType.Birthday);
+            discount10.SetBirthdayOfBuyer(Convert.ToDateTime("2017-12-10"));
+            discount10.SetDiscount(10);
+
             var cart = new Cart();
             cart.AddProduct(productA);
             cart.AddProduct(productB);
@@ -74,6 +79,7 @@ namespace ConsoleApp
             discountManager.Add(discount7);
             discountManager.Add(discount8);
             discountManager.Add(discount9);
+            discountManager.Add(discount10);
 
             var calculatorManager = new CalculatorManager();
             calculatorManager.SetDiscountManager(discountManager);

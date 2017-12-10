@@ -5,15 +5,15 @@ namespace ConsoleApp
     /// <summary>
     /// Корзина с продуктами
     /// </summary>
-    public class Cart
+    public class Cart : ICart
     {
-        private readonly List<Product> _products = new List<Product>();
+        private readonly List<IProduct> _products = new List<IProduct>();
 
         /// <summary>
         /// Добавить продукт в корзину
         /// </summary>
         /// <param name="product"></param>
-        public void AddProduct(Product product)
+        public void AddProduct(IProduct product)
         {
             _products.Add(product);
         }
@@ -22,7 +22,7 @@ namespace ConsoleApp
         /// Получить продукты из корзины
         /// </summary>
         /// <returns></returns>
-        public List<Product> GetProducts()
+        public List<IProduct> GetProducts()
         {
             return _products;
         }

@@ -14,7 +14,7 @@ namespace ConsoleApp
             _strategy = strategy;
         }
 
-        public decimal GetSum(DiscountProduct discount, List<Product> products)
+        public decimal GetSum(IDiscountProduct discount, List<IProduct> products)
         {
             return _strategy.GetSum(discount, products);
         }

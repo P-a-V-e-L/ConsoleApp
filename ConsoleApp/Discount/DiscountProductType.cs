@@ -5,6 +5,7 @@
         ProductSet2 = 2,
         ProductSet3 = 3,
         ProductSet4 = 4,
-        ProductSet5 = 5
+        ProductSet5 = 5,
+        Birthday = 6
     }
 }

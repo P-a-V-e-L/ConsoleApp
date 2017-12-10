@@ -6,11 +6,11 @@ namespace ConsoleApp
     {
         private List<ProductType> _allowProductTypes;
 
-        public decimal GetSum(DiscountProduct discount, List<Product> products)
+        public decimal GetSum(IDiscountProduct discount, List<IProduct> products)
         {
             var allowProductTypes = discount.GetAllowProductTypes();
             var denyProductTypes = discount.GetDenyProductTypes();
-            List<Product> discountProducts = new List<Product>();
+            List<IProduct> discountProducts = new List<IProduct>();
             _allowProductTypes = new List<ProductType>(allowProductTypes);
             decimal sum = 0;
             foreach (var product in products)

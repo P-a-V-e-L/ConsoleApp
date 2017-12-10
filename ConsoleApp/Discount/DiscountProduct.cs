@@ -6,12 +6,13 @@ namespace ConsoleApp
     /// <summary>
     /// Множестово скидок
     /// </summary>
-    public class DiscountProduct
+    public class DiscountProduct : IDiscountProduct
     {
         private List<ProductType> _allowProductTypes = new List<ProductType>();
         private List<ProductType> _denyProductTypes = new List<ProductType>();
         private decimal _discount;
         private DiscountProductType _type;
+        private DateTime _birthdayOfBuyer;
 
         public void SetAllowProductTypes(ProductType pt1, ProductType pt2)
         {
@@ -84,6 +85,16 @@ namespace ConsoleApp
         public DiscountProductType GetDiscountProductType()
         {
             return _type;
+        }
+
+        public void SetBirthdayOfBuyer(DateTime dateTime)
+        {
+            _birthdayOfBuyer = dateTime.Date;
+        }
+
+        public DateTime GetBirthdayOfBuyer()
+        {
+            return _birthdayOfBuyer;
         }
 
         private void Check()

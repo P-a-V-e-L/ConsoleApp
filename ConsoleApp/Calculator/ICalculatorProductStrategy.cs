@@ -4,6 +4,6 @@ namespace ConsoleApp
 {
     public interface ICalculatorProductStrategy
     {
-        decimal GetSum(DiscountProduct discount, List<Product> products);
+        decimal GetSum(IDiscountProduct discount, List<IProduct> products);
     }
 }
